@@ -1,0 +1,36 @@
+
+query Tasks {
+  tasks {
+    uuid
+    title
+    description
+    user {
+      displayName
+      uuid
+    }
+  }
+}
+
+mutation AddTask($authorId: uuid!, $description: String!, $title: name!) {
+  insert_tasks(
+    objects: { authorId: $authorId, description: $description, title: $title }
+  ) {
+    returning {
+      description
+      title
+      user {
+        displayName
+        uuid
+      }
+      uuid
+    }
+  }
+}
+
+subscription tasksSubscription {
+  tasks {
+    authorId
+    description
+    title
+  }
+}

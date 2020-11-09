@@ -7,6 +7,10 @@ generates:
       - "typescript"
       - "typescript-operations"
       - "typescript-apollo-angular"
+    config:
+      declarationKind: "interface"
+      namingConvention:
+        transformUnderscore: true
   ./graphql.schema.json:
     plugins:
       - "introspection"

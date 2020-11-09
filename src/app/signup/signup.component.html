@@ -1,0 +1,15 @@
+<form class="form" [formGroup]="signUpForm">
+  <mat-form-field class="form-field">
+    <mat-label>Your email</mat-label>
+    <input matInput formControlName="email" type="text" name="email-hasura" />
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Your password</mat-label>
+    <input matInput formControlName="password" type="password" />
+  </mat-form-field>
+  <div class="form-footer">
+    <button mat-button (click)="createUser()">Create an Account</button>
+    <a routerLink="/login">Already have an account?</a>
+  </div>
+  <button mat-button>Login with Google</button>
+</form>

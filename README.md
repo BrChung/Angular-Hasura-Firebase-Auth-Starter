@@ -46,6 +46,13 @@ Check if the containers are running
 docker ps
 ```
 
+## Generating GraphQL
+
+Run
+```bash
+npm run generate-graphql
+```
+
 ## Deploying Hasura
 Check out this [guide](https://hasura.io/docs/1.0/graphql/core/deployment/deployment-guides/index.html) on methods of deploying your Hasura instance.
 
