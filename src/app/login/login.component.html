@@ -8,7 +8,7 @@
     <input matInput formControlName="password" type="password" />
   </mat-form-field>
   <div class="form-footer">
-    <button mat-button>Login</button>
+    <button mat-button (click)="loginUser()">Login</button>
     <a routerLink="/signup">Create a user</a>
   </div>
   <button mat-button>Login with Google</button>

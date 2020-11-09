@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-app-e4a4a": {
+      "hosting": {
+        "Angular-Hasura-Firebase-Auth-Starter": [
+          "todo-app-e4a4a"
+        ]
+      }
+    }
+  }
+}
