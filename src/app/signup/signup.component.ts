@@ -6,6 +6,7 @@ import {
   Validators,
 } from "@angular/forms";
 import { Router } from "@angular/router";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Component({
   selector: "app-signup",
@@ -15,7 +16,11 @@ import { Router } from "@angular/router";
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private auth: AngularFireAuth
+  ) {}
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -28,6 +33,10 @@ export class SignupComponent implements OnInit {
   }
 
   createUser() {
-    console.log(this.signUpForm.value);
+    const { email, password } = this.signUpForm.value;
+    this.auth.createUserWithEmailAndPassword(email, password).then((user) => {
+      console.log(user);
+      this.router.navigate([""]);
+    });
   }
 }
